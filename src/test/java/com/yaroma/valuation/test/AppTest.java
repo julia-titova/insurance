@@ -83,7 +83,7 @@ public class AppTest {
         
         
         
-        // Software service test. -----------------------------------------------       
+        // Insurance service test. -----------------------------------------------       
         System.out.println("Project service test.");
         InsuranceService insuranceService = (InsuranceService) SpringFactory.getspringApplicationContext().getBean("insuranceService");
         Insurance insurance = new Insurance();
@@ -94,10 +94,10 @@ public class AppTest {
         insurance.setUserId(1);
 
         insuranceService.createInsurance(insurance);
-        System.out.println("create software done. Software id: " + customer.getId());
+        System.out.println("create insurance done. Insurance id: " + customer.getId());
 
         insuranceService.deleteInsurance(insurance);
-        System.out.println("Delete software done!");
+        System.out.println("Delete insurance done!");
 
         // Stat service test. --------------------------------------------------      
         System.out.println("Link service test.");
@@ -114,11 +114,6 @@ public class AppTest {
         System.out.println("Delete stat done!");
         
         // Link service test. --------------------------------------------------
-//        Link link = new Link();
-//        link.setId(0);
-//        link.setCustomerId(1);
-//        link.setSoftwareId(2);
-//        link.setUserId(1);
         
         LinkService linkService = (LinkService) SpringFactory.getspringApplicationContext().getBean("linkService");
         //linkService.createLink(link);
