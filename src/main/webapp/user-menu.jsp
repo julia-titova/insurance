@@ -21,7 +21,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Users menu</h3>
+            <h3>Система социального страхования. Меню пользователей</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -44,11 +44,11 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>User id</th>
-                    <th>Name</th>
-                    <th>Login</th>
-                    <th>Registration date</th>
-                    <th>Administrator</th>
+                    <th>Номер</th>
+                    <th>Имя</th>
+                    <th>Логин</th>
+                    <th>Дата</th>
+                    <th>Администратор</th>
                 </tr>
                 <%
                     UserService userService = (UserService) SpringFactory.getspringApplicationContext().getBean("userService");
@@ -94,7 +94,7 @@
                     <td>
                         <form action="user-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-user"></span> User operations
+                                <span class="glyphicon glyphicon-user"></span> Операции пользователей
                             </button>
                         </form>
                     </td>
@@ -104,7 +104,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> В главное меню
                             </button>
                         </form>
                     </td>

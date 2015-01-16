@@ -15,7 +15,8 @@
     </head>
     <body>
         <div class="container">
-            <h3>Insurance operations menu</h3>
+            <h3>Система социального страхования</h3>
+            <h3>Операции по страховкам</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -36,8 +37,8 @@
             </h4>
             <br>
             <form class="form-signin" method="GET" action="/insurance/webresources/insurance/create">
-                <input name = "paramName" type="text" id="name" class="form-control" placeholder="name">
-                <input name = "paramPrice" type="text" id="licensePrice" class="form-control" placeholder="price"> 
+                <input name = "paramName" type="text" id="name" class="form-control" placeholder="название">
+                <input name = "paramPrice" type="text" id="licensePrice" class="form-control" placeholder="цена"> 
                 <br>          
 
                 <table>
@@ -45,7 +46,7 @@
                         <td>
 
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-heart"></span> Create new insurance
+                                <span class="glyphicon glyphicon-heart"></span> Создать страховку
                             </button>
                             </form>
                         </td>
@@ -56,7 +57,7 @@
                         <td>
                             <form action="insurance-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-heart"></span> Back to insurance menu
+                                    <span class="glyphicon glyphicon-heart"></span> В меню страховок
                                 </button>
                             </form>
                         </td>

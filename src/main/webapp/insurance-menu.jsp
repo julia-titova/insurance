@@ -21,7 +21,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Insurance menu</h3>
+            <h3>Система социального страхования. Меню страховок</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -44,10 +44,10 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Date</th>
+                    <th>Номер</th>
+                    <th>Название</th>
+                    <th>Цена</th>
+                    <th>Дата</th>
                 </tr>
                 <%
                     InsuranceService insuranceService = (InsuranceService) SpringFactory.getspringApplicationContext().getBean("insuranceService");
@@ -92,7 +92,7 @@
                     <td>
                         <form action="insurance-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-heart"></span> Insurance operations
+                                <span class="glyphicon glyphicon-heart"></span> Операции по страховкам
                             </button>
                         </form>
                     </td>
@@ -102,7 +102,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> Вернуться в главное меню
                             </button>
                         </form>
                     </td>

@@ -20,7 +20,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Users menu</h3>
+            <h3>Система социального страхования. Меню заказчиков</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -44,9 +44,9 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>Customer id</th>
-                    <th>Name</th>
-                    <th>Date</th>
+                    <th>Номер</th>
+                    <th>Имя</th>
+                    <th>Дата</th>
                 </tr>
                 <%
                     CustomerService customerService = (CustomerService) SpringFactory.getspringApplicationContext().getBean("customerService");
@@ -94,7 +94,7 @@
                     <td>
                         <form action="customers-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-user"></span> Customers operations
+                                <span class="glyphicon glyphicon-user"></span> Операции с заказчиками
                             </button>
                         </form>
                     </td>
@@ -104,7 +104,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> Вернуться в главное меню
                             </button>
                         </form>
                     </td>

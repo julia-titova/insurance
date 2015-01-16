@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Insurance - system. Main menu</h3>
+            <h3>Система социального страхования. Главное меню</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -38,44 +38,44 @@
             <br>
             <table class="table table-striped">
                 <tr>
-                    <th>Description</th>
-                    <th>Menu</th>
+                    <th>Описание</th>
+                    <th>Меню</th>
                 <tr>
-                    <td>Customers</td>
+                    <td>Заказчики текущего пользователя</td>
                     <td>
                         <form action="customers-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Customers menu
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Меню заказчиков
                             </button> 
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td>Insurance</td>
+                    <td>Страховки</td>
                     <td>
                         <form action="insurance-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Insurance menu
+                                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Меню страховок
                             </button> 
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td>Links</td>
+                    <td>Назначения</td>
                     <td>
                         <form action="links-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> Links menu
+                                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> Меню назначений
                             </button> 
                         </form>
                     </td>
                 </tr>
                 <tr>
-                    <td>Statistic</td>
+                    <td>Статистика</td>
                     <td>
                         <form action="stats-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> Statistics menu
+                                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> Меню статистики
                             </button> 
                         </form>
                     </td>
@@ -85,11 +85,11 @@
                     if (user != null) {
                         if (user.getAdmin().equals("admin")) {
                             out.write("<tr>");
-                            out.write("<td>User operations</td>");
+                            out.write("<td>Пользователи</td>");
                             out.write("<td>");
                             out.write("<form action=\"user-menu.jsp\">");
                             out.write("<button class=\"btn btn-warning btn-block\">");
-                            out.write("<span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span> User menu");
+                            out.write("<span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span> Меню пользователей");
                             out.write("</button>");
                             out.write("</form>");
                             out.write("</td>");
@@ -102,7 +102,7 @@
 
             <form class="form-signin" method="GET" action="/insurance/webresources/logout">
                 <button class="btn btn-info" type="submit">
-                    <span class="glyphicon glyphicon-off"></span> Log out
+                    <span class="glyphicon glyphicon-off"></span> Выход
                 </button>
             </form>
         </div>

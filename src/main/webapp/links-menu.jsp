@@ -22,7 +22,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Links menu</h3>
+            <h3>Система социального страхования. Меню назначений</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -47,10 +47,10 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>Link id</th>
-                    <th>Customer</th>
-                    <th>Software</th>
-                    <th>Price</th>
+                    <th>Номер</th>
+                    <th>Заказчик</th>
+                    <th>Страховка</th>
+                    <th>Цена</th>
                 </tr>
                 <%
                     CustomerService customerService = (CustomerService) SpringFactory.getspringApplicationContext().getBean("customerService");
@@ -77,7 +77,7 @@
                             }
 
                             out.write("<tr>");
-                            out.write("<td>" + "Customer in list number: " + i + "</td>");
+                            out.write("<td>" + "Заказчик в списке №: " + i + "</td>");
                             out.write("</tr>");
 
                             // Out a cell with current project id
@@ -102,7 +102,7 @@
                             }
 
                             out.write("<tr>");
-                            out.write("<td>" + "Total balance " + totalBalance + "</td>");
+                            out.write("<td>" + "Итоговый баланс: " + totalBalance + "</td>");
                             out.write("</tr>");
 
                         }
@@ -118,7 +118,7 @@
                     <td>
                         <form action="links-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-link"></span> Links operations
+                                <span class="glyphicon glyphicon-link"></span> Операции с назначениями
                             </button>
                         </form>
                     </td>
@@ -128,7 +128,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> Вернуться в главное меню
                             </button>
                         </form>
                     </td>

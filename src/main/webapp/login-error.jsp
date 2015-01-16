@@ -14,11 +14,11 @@
     </head>
     <body>
         <div class="form-signin">
-            <h4>Current user does not exist!!!</h4>
+            <h4>Текуший пользователь не найден!</h4>
             <br>
             <form action="login.html">
                 <button class="btn btn-info">
-                    <span class="glyphicon glyphicon-home"></span> Try again!
+                    <span class="glyphicon glyphicon-home"></span> Ввести данные заново!
                 </button>
             </form>            
         </div>
