@@ -48,6 +48,7 @@
                     <th>Название</th>
                     <th>Цена</th>
                     <th>Дата</th>
+                    <th>Тип</th>
                 </tr>
                 <%
                     InsuranceService insuranceService = (InsuranceService) SpringFactory.getspringApplicationContext().getBean("insuranceService");
@@ -76,6 +77,7 @@
                                 out.write("<td>" + date + "</td>");
                             }
 
+                            out.write("<td>" + insurance.getType() + "</td>"); 
                             out.write("</tr>");
                         }
 

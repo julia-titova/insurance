@@ -23,6 +23,37 @@ import javax.ws.rs.core.Response;
 
 @Path("links")
 public class LinksController {
+    
+    @GET
+    @Path("create_accept")
+    @Produces("text/html")
+    public Response createAccept() {
+        java.net.URI location = null;
+        
+        try {
+            SessionBean sessionBean = (SessionBean) SpringFactory.getspringApplicationContext().getBean("sessionBean");
+            Link link = sessionBean.getLink();
+            User currentUser = sessionBean.getCurrentUser();
+            
+            LinkService linkService = (LinkService) SpringFactory.getspringApplicationContext().getBean("linkService");
+            linkService.createLink(link);
+            
+            Stat stat = new Stat();
+            stat.setId(0);
+            stat.setDescription("User " + currentUser.getName() + " create a new link with id: " + link.getId());
+            stat.setDate(new Date());
+            
+            StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService");
+            statService.createStat(stat);
+            
+            
+            location = new java.net.URI("../links-menu.jsp");    
+        }catch (URISyntaxException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return Response.temporaryRedirect(location).build();
+    }
 
     @GET
     @Path("create")
@@ -47,23 +78,24 @@ public class LinksController {
             InsuranceService insuranceService = (InsuranceService) SpringFactory.getspringApplicationContext().getBean("insuranceService");
             Insurance insurance = insuranceService.getInsuranceByName(insuranceName);
             if (insurance != null){
-                link.setSoftwareId(insurance.getId());
+                link.setInsuranceId(insurance.getId());
             }
 
             link.setUserId(currentUserId);
 
-            LinkService linkService = (LinkService) SpringFactory.getspringApplicationContext().getBean("linkService");
-            linkService.createLink(link);
-            
-            Stat stat = new Stat();
-            stat.setId(0);
-            stat.setDescription("User " + currentUser.getName() + " create a new link with id: " + link.getId());
-            stat.setDate(new Date());
-            
-            StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService");
-            statService.createStat(stat);
+//            LinkService linkService = (LinkService) SpringFactory.getspringApplicationContext().getBean("linkService");
+//            linkService.createLink(link);
+//            
+//            Stat stat = new Stat();
+//            stat.setId(0);
+//            stat.setDescription("User " + currentUser.getName() + " create a new link with id: " + link.getId());
+//            stat.setDate(new Date());
+//            
+//            StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService");
+//            statService.createStat(stat);
+            sessionBean.setLink(link);
 
-            location = new java.net.URI("../links-menu.jsp");
+            location = new java.net.URI("../form.jsp");
 
         } catch (URISyntaxException ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);

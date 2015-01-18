@@ -20,6 +20,7 @@ public class Insurance {
     private int price;
     private Date date;
     private int userId;
+    private String type;
     
     public Insurance(){
         id = 0;
@@ -84,5 +85,15 @@ public class Insurance {
     public void setUserId(int userId) {
         this.userId = userId;
     }
+
+
+    @Column (name="TYPE")
+    public String getType() {
+        return type;
+    }
     
+    public void setType(String type) {
+        this.type = type;
+    }
+        
 }

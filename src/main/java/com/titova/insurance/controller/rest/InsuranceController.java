@@ -23,7 +23,7 @@ public class InsuranceController {
     @GET
     @Path("create")
     @Produces("text/html")
-    public Response create(@QueryParam("paramName") String name, @QueryParam("paramPrice") int price) {
+    public Response create(@QueryParam("paramName") String name, @QueryParam("paramPrice") int price, @QueryParam("paramType") String type) {
         java.net.URI location = null;
 
         try {
@@ -36,6 +36,7 @@ public class InsuranceController {
             insurance.setPrice(price);
             insurance.setDate(new Date());
             insurance.setUserId(currentUser.getId());
+            insurance.setType(type);
 
             InsuranceService insuranceService = (InsuranceService) SpringFactory.getspringApplicationContext().getBean("insuranceService");
             insuranceService.createInsurance(insurance);

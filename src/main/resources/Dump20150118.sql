@@ -39,6 +39,7 @@ CREATE TABLE `CUSTOMER` (
 
 LOCK TABLES `CUSTOMER` WRITE;
 /*!40000 ALTER TABLE `CUSTOMER` DISABLE KEYS */;
+INSERT INTO `CUSTOMER` VALUES (1,'Sally Shapiro','2015-01-07',1),(2,'Courtney Cox','2015-01-07',1),(3,'Customer 1 by Jennifer','2015-01-07',2);
 /*!40000 ALTER TABLE `CUSTOMER` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,7 +55,8 @@ CREATE TABLE `INSURANCE` (
   `NAME` varchar(255) DEFAULT NULL,
   `PRICE` int(11) DEFAULT NULL,
   `DATE` date DEFAULT NULL,
-  `USER_ID` varchar(255) DEFAULT NULL,
+  `USER_ID` int(11) DEFAULT NULL,
+  `TYPE` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -65,6 +67,7 @@ CREATE TABLE `INSURANCE` (
 
 LOCK TABLES `INSURANCE` WRITE;
 /*!40000 ALTER TABLE `INSURANCE` DISABLE KEYS */;
+INSERT INTO `INSURANCE` VALUES (1,'Health care',150,'2015-01-07',1,'Health care type'),(2,'Home fire insurance',250,'2015-01-07',1,'Fire insurance type'),(3,'Cargo insurance',15000,'2015-01-18',1,'Cargo type');
 /*!40000 ALTER TABLE `INSURANCE` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,8 +81,9 @@ DROP TABLE IF EXISTS `LINK`;
 CREATE TABLE `LINK` (
   `ID` int(11) NOT NULL,
   `CUSTOMER_ID` int(11) DEFAULT NULL,
-  `SOFTWARE_ID` int(11) DEFAULT NULL,
+  `INSURANCE_ID` int(11) DEFAULT NULL,
   `USER_ID` int(11) DEFAULT NULL,
+  `PERIOD` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -90,6 +94,7 @@ CREATE TABLE `LINK` (
 
 LOCK TABLES `LINK` WRITE;
 /*!40000 ALTER TABLE `LINK` DISABLE KEYS */;
+INSERT INTO `LINK` VALUES (1,1,1,1,NULL),(2,1,2,1,NULL),(3,2,1,1,NULL);
 /*!40000 ALTER TABLE `LINK` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,6 +119,7 @@ CREATE TABLE `STAT` (
 
 LOCK TABLES `STAT` WRITE;
 /*!40000 ALTER TABLE `STAT` DISABLE KEYS */;
+INSERT INTO `STAT` VALUES (1,'2015-01-07','User Julia Titova create a new customer with id: 1'),(2,'2015-01-07','User Julia Titova create a new customer with id: 2'),(3,'2015-01-07','User Julia Titova create a new insurance with id: 1'),(4,'2015-01-07','User Julia Titova create a new insurance with id: 2'),(5,'2015-01-07','User Julia Titova create a new link with id: 1'),(6,'2015-01-07','User Julia Titova create a new link with id: 2'),(7,'2015-01-07','User Julia Titova create a new link with id: 3'),(8,'2015-01-07','User Julia Titova create a new user with id: 2'),(9,'2015-01-07','User Jennifer Aniston create a new customer with id: 3'),(10,'2015-01-18','User Julia Titova create a new insurance with id: 3');
 /*!40000 ALTER TABLE `STAT` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,7 +147,7 @@ CREATE TABLE `USER` (
 
 LOCK TABLES `USER` WRITE;
 /*!40000 ALTER TABLE `USER` DISABLE KEYS */;
-INSERT INTO `USER` VALUES (1,'Julia Titova','julia','pass','2015-01-03','admin');
+INSERT INTO `USER` VALUES (1,'Julia Titova','julia','pass','2015-01-03','admin'),(2,'Jennifer Aniston','jennifer','pass','2015-01-07','user');
 /*!40000 ALTER TABLE `USER` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -154,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-01-07 19:00:39
+-- Dump completed on 2015-01-18 22:17:31

@@ -38,7 +38,8 @@
             <br>
             <form class="form-signin" method="GET" action="/insurance/webresources/insurance/create">
                 <input name = "paramName" type="text" id="name" class="form-control" placeholder="название">
-                <input name = "paramPrice" type="text" id="licensePrice" class="form-control" placeholder="цена"> 
+                <input name = "paramPrice" type="text" id="licensePrice" class="form-control" placeholder="цена">
+                <input name = "paramType" type="text" id="licensePrice" class="form-control" placeholder="тип"> 
                 <br>          
 
                 <table>

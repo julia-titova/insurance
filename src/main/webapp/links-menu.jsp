@@ -51,6 +51,7 @@
                     <th>Заказчик</th>
                     <th>Страховка</th>
                     <th>Цена</th>
+                    <th>Тип</th>
                 </tr>
                 <%
                     CustomerService customerService = (CustomerService) SpringFactory.getspringApplicationContext().getBean("customerService");
@@ -69,7 +70,7 @@
                             for (int b = 0; b < linksList.size() - 1; b++) {
                                 for (int a = 1; a < linksList.size() - b; a++) {
                                     Link tempLink = linksList.get(a);
-                                    if (tempLink.getSoftwareId() < linksList.get(a - 1).getSoftwareId()) {
+                                    if (tempLink.getInsuranceId()< linksList.get(a - 1).getInsuranceId()) {
                                         linksList.set(a, linksList.get(a - 1));
                                         linksList.set(a - 1, tempLink);
                                     }
@@ -92,10 +93,11 @@
                                 out.write("<td>" + tempCustomer.getName() + "</td>");
 
                                 InsuranceService insuranceService = (InsuranceService) SpringFactory.getspringApplicationContext().getBean("insuranceService");
-                                Integer insuranceId = link.getSoftwareId();
+                                Integer insuranceId = link.getInsuranceId();
                                 Insurance tempInsurance = insuranceService.readInsurance(insuranceId);
                                 out.write("<td>" + tempInsurance.getName() + "</td>");
-                                out.write("<td>" + tempInsurance.getPrice()+ "</td>");                                
+                                out.write("<td>" + tempInsurance.getPrice()+ "</td>");
+                                out.write("<td>" + tempInsurance.getType() + "</td>"); 
 
                                 totalBalance = totalBalance + tempInsurance.getPrice();
                                 }

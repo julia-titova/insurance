@@ -14,20 +14,20 @@ public class Link {
     
     private int id;
     private int customerId;
-    private int softwareId;
+    private int insuranceId;
     private int userId;
     
     public Link() {
         id = 0;
         customerId = 0;
-        softwareId = 0;
+        insuranceId = 0;
         userId = 0;
     }
     
     public Link(int customerId, int softwareId, int userId){
         id = 0;
         this.customerId = customerId;
-        this.softwareId = softwareId;
+        this.insuranceId = softwareId;
         this.userId = userId;
     }
 
@@ -52,13 +52,13 @@ public class Link {
         this.customerId = customerId;
     }
 
-    @Column(name = "SOFTWARE_ID")
-    public int getSoftwareId() {
-        return softwareId;
+    @Column(name = "INSURANCE_ID")
+    public int getInsuranceId() {
+        return insuranceId;
     }
 
-    public void setSoftwareId(int softwareId) {
-        this.softwareId = softwareId;
+    public void setInsuranceId(int insuranceId) {
+        this.insuranceId = insuranceId;
     }
     
     @Column(name = "USER_ID")
